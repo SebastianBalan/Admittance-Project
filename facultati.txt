@@ -1,0 +1,2 @@
+fmi,buc,300
+med,bv,600
