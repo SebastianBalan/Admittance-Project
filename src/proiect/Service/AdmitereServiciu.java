@@ -13,7 +13,7 @@ public class AdmitereServiciu {
     private Set<Facultate> facultateSet = new HashSet<>();
     private Set<Examen> examenSet = new HashSet<>();
     private Set<Bac> bacSet = new HashSet<>();
-    Persistenta persistenta = Persistenta.getInstance();
+    private Persistenta persistenta = Persistenta.getInstance();
 
     public void adaugaBacFisier() {
         bacSet = persistenta.readBacFromFile("bac.csv");
@@ -21,17 +21,17 @@ public class AdmitereServiciu {
     }
 
     public void adaugaExamenFisier() {
-        examenSet = persistenta.readExamensFromFile("E:\\sebi\\An 2\\Semestrul 2\\Programavare avansata pe obiecte(Java)\\Proiect\\src\\proiect\\examens.csv");
+        examenSet = persistenta.readExamensFromFile("examens.csv");
         persistenta.writeToFile("examens_registry");
     }
 
     public void adaugaCandidatiFisier() {
-        candidatsList = persistenta.readPersonsFromFile("E:\\sebi\\An 2\\Semestrul 2\\Programavare avansata pe obiecte(Java)\\Proiect\\src\\proiect\\candidati.txt");
+        candidatsList = persistenta.readPersonsFromFile("candidati.txt");
         persistenta.writeToFile("candidats_registery");
     }
 
     public void adaugaFacultatiFisier() {
-        facultateSet = persistenta.readFacultiesFromFile("E:\\sebi\\An 2\\Semestrul 2\\Programavare avansata pe obiecte(Java)\\Proiect\\src\\proiect\\facultati.txt");
+        facultateSet = persistenta.readFacultiesFromFile("facultati.txt");
         persistenta.writeToFile("faculties_registery");
     }
 
