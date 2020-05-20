@@ -35,7 +35,8 @@ public class Main {
         System.out.println("10.Adauga facultatile din fisier");
         System.out.println("11.Adauga examenele din fisier");
         System.out.println("12.Adauga examenele de bac din fisier");
-        System.out.println("13.Iesire");
+        System.out.println("13.Salveaza un examen de bac in baza de date");
+        System.out.println("14.Iesire");
     }
 
     public int optiune() {
@@ -82,6 +83,9 @@ public class Main {
                 ob.adaugaBacFisier();
                 break;
             case 13:
+                ob.bacToSave();
+                break;
+            case 14:
                 System.exit(0);
         }
     }

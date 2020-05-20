@@ -13,7 +13,26 @@ public class AdmitereServiciu {
     private Set<Facultate> facultateSet = new HashSet<>();
     private Set<Examen> examenSet = new HashSet<>();
     private Set<Bac> bacSet = new HashSet<>();
+
     private Persistenta persistenta = Persistenta.getInstance();
+
+    private static final BacService bacService = BacService.getInstance();
+    private static final CandidatService candidatService = CandidatService.getInstance();
+    private static final ExamenService examenService = ExamenService.getInstance();
+    private static final FacultateService facultateService = FacultateService.getInstance();
+
+    public void bacToSave() { Bac bacToSave = bacService.saveBac(10, "scris");}
+
+    public void bacToFind() {Bac bacToFind = bacService.findBac("scris");}
+
+    public void bacUpdate() {
+        Bac bacUpdate = new Bac(9, "oral");
+        bacUpdate = bacService.updateBac(bacUpdate);
+    }
+
+    public void bacDelete() {
+        boolean result = bacService.deleteBac(10);
+    }
 
     public void adaugaBacFisier() {
         bacSet = persistenta.readBacFromFile("bac.csv");
@@ -117,6 +136,7 @@ public class AdmitereServiciu {
     public void locuriRamase() {
         System.out.println(300-candidatsSet.size());
     }
+
     public void afisareSortareDescrNume() {
 
         for ( int i=candidatsList.size()-1;i>=0;i-- ) {

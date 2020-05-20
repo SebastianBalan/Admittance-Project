@@ -8,6 +8,7 @@ public class Candidat implements Comparable<Candidat> {
     private float medieBac;
     private float notaExamen;
 
+    public Candidat() {}
 
     //Setteri
     public void setVarsta(int varsta) {
